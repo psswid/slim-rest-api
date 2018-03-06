@@ -1,15 +1,6 @@
 <?php
 
-//file to delete
-
-
-
-
-
-
-
-
-//$app->get('/', ['FaultWall\Controllers\HomeController', index])->setName('home');
+$app->get('/', ['FaultWall\Controllers\HomeController', index])->setName('home');
 
 // use \Psr\Http\Message\ServerRequestInterface as Request;
 // use \Psr\Http\Message\ResponseInterface as Response;
