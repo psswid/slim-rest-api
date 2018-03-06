@@ -27,3 +27,9 @@ in body
 
 To update customer /api/customer/update/{id} and put same body as above with updated data
 To delete customer /api/customer/delete/{id}
+
+
+todo:
+-build basic front CRUD interface (use bootstrap)
+-make it functionable to create and pick issues (like reporting problems with sink and picking issue by specialist)
+-create registration and accounts
