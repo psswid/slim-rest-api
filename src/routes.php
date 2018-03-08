@@ -1,6 +1,23 @@
 <?php
 
+//Home page and get
 $app->get('/', ['FaultWall\Controllers\HomeController', index])->setName('home');
+
+
+
+
+//Get all issues API
+$app->get('/api/issues',['FaultWall\Controllers\HomeController', all_issues_api]);
+
+//Get single issue API
+$app->get('/api/issue/{id}',['FaultWall\Controllers\HomeController', single_issue_api]);
+
+//Add issue API
+$app->post('/api/issue/add', ['FaultWall\Controllers\HomeController', add_issue_api]);
+
+
+
+
 
 // use \Psr\Http\Message\ServerRequestInterface as Request;
 // use \Psr\Http\Message\ResponseInterface as Response;

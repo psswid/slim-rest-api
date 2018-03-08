@@ -1,6 +1,7 @@
 <?php
 
 use function DI\get;
+use FaultWall\Models\Issue;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 use Interop\Container\ContainerInterface;
@@ -20,5 +21,11 @@ return [
       ));
 
       return $twig;
-    }
+    },
+    Issue::class => function (ContainerInterface $c) {
+      return new Issue; 
+    },
 ];
+
+
+//w sumie to tez mozna dodac jakis rating system majstrów xD
