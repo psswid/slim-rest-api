@@ -15,7 +15,8 @@ $app->get('/api/issue/{id}',['FaultWall\Controllers\HomeController', single_issu
 //Add issue API
 $app->post('/api/issue/add', ['FaultWall\Controllers\HomeController', add_issue_api]);
 
-
+//Update issue API
+$app->put('/api/issue/update/{id}', ['FaultWall\Controllers\HomeController', update_issue_api]);
 
 
 
