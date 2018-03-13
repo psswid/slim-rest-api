@@ -61,7 +61,7 @@ class CustomerApiController{
   }
 
   //API delete issue
-  public function delete_issue_api(Request $request, Response $response, $id){
+  public function delete_customer_api(Request $request, Response $response, $id){
     $customer = Customer::find($id);
 
     $customer->delete();

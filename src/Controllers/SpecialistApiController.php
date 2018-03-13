@@ -2,70 +2,72 @@
 
 namespace FaultWall\Controllers;
 
-use FaultWall\Models\Customer;
+use FaultWall\Models\Specialist;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
-class CustomerApiController{
+class SpecialistApiController{
 
-  //API get all customers
-  public function all_customers_api(Request $request, Response $response){
-    $customers = Customer::all();
+  //API get all specialists
+  public function all_specialists_api(Request $request, Response $response){
+    $specialists = Specialist::all();
 
-    return $customers->toJson();
+    return $specialists->toJson();
   }
 
-  //API get single customer
-  public function single_customer_api(Request $request, Response $response, $id){
-    $customer = Customer::findOrFail($id);
+  //API get single specialist
+  public function single_specialist_api(Request $request, Response $response, $id){
+    $specialist = Specialist::findOrFail($id);
 
-    return $customer->toJson();
+    return $specialist->toJson();
   }
 
-  //API add new customer
-  public function add_customer_api(Request $request, Response $response){
-    $customer = new Customer;
+  //API add new specialist
+  public function add_specialist_api(Request $request, Response $response){
+    $specialist = new Specialist;
     $params = $request->getParsedBody();
 
-    $customer->email = $params['email'];
-    $customer->password = $params['password'];
-    $customer->first_name = $params['first_name'];
-    $customer->last_name = $params['last_name'];
-    $customer->street = $params['street'];
-    $customer->city = $params['city'];
-    $customer->state = $params['state'];
-    $customer->zip = $params['zip'];
-    $customer->phone = $params['phone'];
+    $specialist->email = $params['email'];
+    $specialist->password = $params['password'];
+    $specialist->first_name = $params['first_name'];
+    $specialist->last_name = $params['last_name'];
+    $specialist->street = $params['street'];
+    $specialist->speciality = $params['speciality'];
+    $specialist->city = $params['city'];
+    $specialist->state = $params['state'];
+    $specialist->zip = $params['zip'];
+    $specialist->phone = $params['phone'];
 
-    $customer->save();
-    echo '{"notice": {"text": "new customer added"}';
+    $specialist->save();
+    echo '{"notice": {"text": "new specialist added"}';
   }
 
-  //API update customer
-  public function update_customer_api(Request $request, Response $response, $id){
-    $customer = Customer::find($id);
+  //API update specialist
+  public function update_specialist_api(Request $request, Response $response, $id){
+    $specialist = Specialist::find($id);
     $params = $request->getParsedBody();
 
-    $customer->email = $params['email'];
-    $customer->password = $params['password'];
-    $customer->first_name = $params['first_name'];
-    $customer->last_name = $params['last_name'];
-    $customer->street = $params['street'];
-    $customer->city = $params['city'];
-    $customer->state = $params['state'];
-    $customer->zip = $params['zip'];
-    $customer->phone = $params['phone'];
+    $specialist->email = $params['email'];
+    $specialist->password = $params['password'];
+    $specialist->first_name = $params['first_name'];
+    $specialist->last_name = $params['last_name'];
+    $specialist->street = $params['street'];
+    $specialist->speciality = $params['speciality'];
+    $specialist->city = $params['city'];
+    $specialist->state = $params['state'];
+    $specialist->zip = $params['zip'];
+    $specialist->phone = $params['phone'];
 
-    $customer->save();
-    echo '{"notice": {"text": "customer #id:'. $id . ' updated"}';
+    $specialist->save();
+    echo '{"notice": {"text": "specialist #id:'. $id . ' updated"}';
   }
 
-  //API delete issue
-  public function delete_issue_api(Request $request, Response $response, $id){
-    $customer = Customer::find($id);
+  //API delete specialist
+  public function delete_specialist_api(Request $request, Response $response, $id){
+    $specialist = Specialist::find($id);
 
-    $customer->delete();
+    $specialist->delete();
 
-    echo '{"notice": {"text": "customer #id:'. $id . ' deleted"}';
+    echo '{"notice": {"text": "specialist #id:'. $id . ' deleted"}';
   }
 }
