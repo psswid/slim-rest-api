@@ -3,6 +3,7 @@
 //Home page and get
 $app->get('/', ['FaultWall\Controllers\HomeController', index])->setName('home');
 
+$app->get('/issues', ['FaultWall\Controllers\IssueController', index])->setName('issues.index');
 
 /*
 *

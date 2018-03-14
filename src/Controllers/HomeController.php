@@ -13,11 +13,11 @@ class HomeController{
 
     $issues = $issue->get();
 
-    var_dump($issues);
-
-    return $view->render($response, 'home.twig');
+    return $view->render($response, 'home.twig', [
+      'issues' => $issues
+    ]);
   }
 
-
+//jakies filtry porobic tych rzeczy potem gdzies tam kiedys, ze np woj wielkopolskie, kategoria hydraulika...
 
 }
