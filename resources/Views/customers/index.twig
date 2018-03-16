@@ -1,0 +1,45 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <h2 class="page-header">Customers list</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Street</th>
+            <th scope="col">City</th>
+            <th scope="col">State</th>
+            <th scope="col">Zip</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Creation date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for customer in customers %}
+        <tr>
+            <th>{{ customer.id }}</th>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.password }}</td>
+            <td>{{ customer.first_name }}</td>
+            <td>{{ customer.last_name }}</td>
+            <td>{{ customer.street }}</td>
+            <td>{{ customer.city }}</td>
+            <td>{{ customer.state }}</td>
+            <td>{{ customer.zip }}</td>
+            <td>{{ customer.phone }}</td>
+            <td>{{ customer.created_at|date('Y-m-d') }}</td>
+
+            <td>
+                <a href="/customer/details/{{ customer.id }}" class="btn btn-success">Details</a>
+                <a href="/customer/edit/{{ customer.id }}" class="btn btn-default">Edit</a>
+                <a href="/customer/delete/{{ customer.id }}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

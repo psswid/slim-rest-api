@@ -12,24 +12,24 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 
-class IssueController{
+class CustomerController{
 
-  protected $issue;
+  protected $customer;
   protected $router;
 
-  public function __construct(Issue $issue, Router $router){
+  public function __construct(Customer $customer, Router $router){
 
-    $this->issue = $issue;
+    $this->customer = $customer;
     $this->router = $router;
     //później jeszcze $this->validator = $validator;
   }
 
-  public function index(Request $request, Response $response, Twig $view, Issue $issue){
+  public function index(Request $request, Response $response, Twig $view, Customer $customer){
 
-    $issues = $issue->get();
+    $customers = $customer->get();
 
-    return $view->render($response, 'issues/index.twig', [
-      'issues' => $issues
+    return $view->render($response, 'customers/index.twig', [
+      'customers' => $customers
     ]);
   }
 }

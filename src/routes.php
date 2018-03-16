@@ -3,7 +3,16 @@
 //Home page and get
 $app->get('/', ['FaultWall\Controllers\HomeController', index])->setName('home');
 
+//Get all issues
 $app->get('/issues', ['FaultWall\Controllers\IssueController', index])->setName('issues.index');
+
+//Get all customers
+$app->get('/customers', ['FaultWall\Controllers\CustomerController', index])->setName('customers.index');
+
+
+
+//Get all specialists
+$app->get('/specialists', ['FaultWall\Controllers\SpecialistController', index])->setName('specialists.index');
 
 /*
 *
