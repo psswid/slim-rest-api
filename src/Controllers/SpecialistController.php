@@ -16,6 +16,7 @@ class SpecialistController{
 
   protected $specialist;
   protected $router;
+  protected $view;
 
   public function __construct(Specialist $specialist, Router $router){
 

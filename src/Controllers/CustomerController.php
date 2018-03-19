@@ -16,6 +16,7 @@ class CustomerController{
 
   protected $customer;
   protected $router;
+  protected $view;
 
   public function __construct(Customer $customer, Router $router){
 
@@ -24,6 +25,7 @@ class CustomerController{
     //później jeszcze $this->validator = $validator;
   }
 
+  //Show customers table
   public function index(Request $request, Response $response, Twig $view, Customer $customer){
 
     $customers = $customer->get();
@@ -32,4 +34,14 @@ class CustomerController{
       'customers' => $customers
     ]);
   }
+
+  //Create customer
+  public function createCustomer(Request $request, Response $response){
+
+    // Customer::create([
+    //
+    // ])
+  }
+
+
 }

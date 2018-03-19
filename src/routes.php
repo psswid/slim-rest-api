@@ -3,13 +3,17 @@
 //Home page and get
 $app->get('/', ['FaultWall\Controllers\HomeController', index])->setName('home');
 
+//SignUp get form - customer
+$app->get('/signup',['FaultWall\Controllers\SignUpController', getSignUp])->setName('singup');
+
+//SignUp post register action
+$app->post('/signup',['FaultWall\Controllers\SignUpController', postSignUp]);
+
 //Get all issues
 $app->get('/issues', ['FaultWall\Controllers\IssueController', index])->setName('issues.index');
 
 //Get all customers
 $app->get('/customers', ['FaultWall\Controllers\CustomerController', index])->setName('customers.index');
-
-
 
 //Get all specialists
 $app->get('/specialists', ['FaultWall\Controllers\SpecialistController', index])->setName('specialists.index');

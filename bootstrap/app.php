@@ -8,7 +8,11 @@ session_start();
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$app = new App;
+$app = new App([
+  'settings' => [
+    'displayErrorDetails' => true,
+  ]
+]);
 
 $capsule = new Capsule;
 $capsule->addConnection([

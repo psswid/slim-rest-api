@@ -16,6 +16,7 @@ class IssueController{
 
   protected $issue;
   protected $router;
+  protected $view;
 
   public function __construct(Issue $issue, Router $router){
 

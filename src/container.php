@@ -2,6 +2,9 @@
 
 use function DI\get;
 use FaultWall\Models\Issue;
+use FaultWall\Models\Customer;
+use FaultWall\Models\Specialist;
+use FaultWall\Controllers\SignUpController;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 use Interop\Container\ContainerInterface;
@@ -23,7 +26,16 @@ return [
       return $twig;
     },
     Issue::class => function (ContainerInterface $c) {
-      return new Issue; 
+      return new Issue;
+    },
+    Customer::class => function (ContainerInterface $c) {
+      return new Customer;
+    },
+    Specialist::class => function (ContainerInterface $c) {
+      return new Specialist;
+    },
+    SignUpController::class => function (ContainerInterface $c) {
+      return new SignUpController;
     },
 ];
 

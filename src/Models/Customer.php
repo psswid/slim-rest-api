@@ -21,7 +21,7 @@ class Customer extends Model{
 
   public function issues(){
 
-  return $this->hasMany(Issue::class);
+    return $this->hasMany(Issue::class);
   }
 
 
