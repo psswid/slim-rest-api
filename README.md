@@ -5,11 +5,11 @@ Recreating idea of simple issue reporting table where users can report problem (
 
 Writen OOP way.
 
-Technologies used:
--Rest API,
--Eloquent/Illuminate database library,
--MySQL,
--php,
--Slim 3.0
+Technologies used: <br>
+-Rest API, <br>
+-Eloquent/Illuminate database library, <br>
+-MySQL, <br>
+-php, <br>
+-Slim 3.0 <br>
 
 under development
